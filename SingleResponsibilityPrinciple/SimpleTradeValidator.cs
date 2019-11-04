@@ -32,6 +32,8 @@ namespace SingleResponsibilityPrinciple
                 logger.LogWarning("Trade not a valid integer: '{0}'", tradeData[1]);
                 return false;
             }
+            //Request 403 - "As a Traders I want to prevent dangerous trades so that one typo doesn't ruin the company."  
+            //Details: Trade amounts must be between 1,000 and 100,000 units.If the trade is outside these bounds it should be ignored.
             if (tradeAmount<1000)
             {
                 logger.LogWarning("Trade amount below 1000: '{0}'", tradeData[1]);
